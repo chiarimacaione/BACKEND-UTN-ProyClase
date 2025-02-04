@@ -12,13 +12,11 @@ const PORT = ENVIROMENT.PORT
 
 
 //Cross-Origin Resource Sharing
-
-const cors = require('cors');
-app.use(cors({
-  origin: 'https://frontend-utn-proy-clase-sandy.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+app.use(
+    cors({
+        origin: ENVIROMENT.URL_FRONTEND
+    })
+)
 
 
 app.use(express.json())
